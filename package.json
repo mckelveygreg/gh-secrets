@@ -1,0 +1,52 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "bin": {
+    "gh-secrets": "dist/index.js"
+  },
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start-mon": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "start": "tsdx watch --verbose --target node",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "gh-secrets",
+  "author": "Greg McKelvey",
+  "module": "dist/gh-secrets.esm.js",
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "chalk": "^3.0.0",
+    "clear": "^0.1.0",
+    "envfile": "^5.0.0",
+    "figlet": "^1.3.0",
+    "husky": "^4.2.3",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.8.1",
+    "tsdx": "^0.13.1",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  }
+}
